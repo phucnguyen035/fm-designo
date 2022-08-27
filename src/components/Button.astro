@@ -1,0 +1,16 @@
+---
+export interface Props {
+	variant?: 'primary' | 'outline'
+}
+
+const { variant = 'primary' } = Astro.props
+---
+
+<button
+	class:list={[
+		'px-6 py-4 tracking-[1px] text-[15px] leading-[22px] font-medium rounded-lg uppercase transition-colors hover:bg-peach-light hover:text-white',
+		variant === 'primary' ? 'text-white bg-peach' : 'text-black bg-white',
+	]}
+>
+	<slot />
+</button>
