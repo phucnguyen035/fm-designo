@@ -1,0 +1,32 @@
+---
+import BgHeroPattern from '../assets/images/bg-pattern-hero.svg'
+import ImageHeroPhone from '../assets/images/bg-phone-hero.svg'
+import Button from './Button.astro'
+---
+
+<section class="relative px-6 overflow-hidden text-white bg-peach text-center">
+	<img
+		src={BgHeroPattern}
+		alt="Hero pattern"
+		width="640"
+		height="640"
+		class="absolute top-28 inset-x-0 max-w-none"
+	/>
+
+	<div class="py-20">
+		<h1 class="text-[32px] font-medium leading-9 mb-3.5 md:text-h1">
+			Award-winning custom designs and digital branding solutions
+		</h1>
+		<p class="mb-6 text-base">
+			With over 10 years in the industry, we are experienced in creating fully responsive websites,
+			app design, and engaging brand experiences. <br /> Find out more about our services.
+		</p>
+		<Button variant="outline">Learn more</Button>
+	</div>
+
+	<img
+		src={ImageHeroPhone}
+		class="mx-auto"
+		alt="Phone"
+	/>
+</section>

@@ -1,14 +1,67 @@
 ---
-import Layout from '../layouts/Layout.astro'
 import Logo from '../components/Logo.astro'
 import MobileMenu from '../components/MobileMenu.jsx'
+import SectionHero from '../components/SectionHero.astro'
+import Layout from '../layouts/Layout.astro'
+import IconRightArrow from '../assets/images/icon-right-arrow.svg'
+import ImageAppDesign from '../assets/home/desktop/image-app-design.jpg'
+import ImageGraphicDesign from '../assets/home/desktop/image-graphic-design.jpg'
+import ImageWebDesign from '../assets/home/desktop/image-web-design-small.jpg'
+import { Image, Picture } from '@astrojs/image/components'
+
+const links = [
+	{ title: 'web design', url: '/web-design', image: ImageWebDesign },
+	{ title: 'app design', url: '/app-design', image: ImageAppDesign },
+	{ title: 'graphic design', url: '/graphic-design', image: ImageGraphicDesign },
+]
 ---
+
+<style>
+	.picture {
+		@apply absolute inset-0 -z-10;
+	}
+
+	.picture > :global(img) {
+		@apply h-full object-cover;
+	}
+</style>
 
 <Layout title="Welcome to Astro.">
 	<header class="relative h-24 z-10 flex justify-between items-center px-6">
 		<Logo />
 		<MobileMenu client:visible />
 	</header>
-	<main></main>
+	<main class="space-y-[7.5rem]">
+		<SectionHero />
+		<section class="space-y-6 px-6">
+			{
+				links.map(({ title, url, image }) => (
+					<a
+						class="group relative grid h-[250px] place-items-center overflow-hidden rounded-2xl"
+						href={url}
+					>
+						<div class="group-hover:bg-peach/50 absolute inset-0 bg-black/50" />
+						<Picture
+							src={image}
+							sizes=""
+							widths={[541]}
+							class="picture"
+						/>
+						<div class="z-10 text-center uppercase text-white">
+							<h2 class="mb-3 text-[28px] leading-9 tracking-[1.4px]">{title}</h2>
+							<div class="flex items-center justify-center space-x-4">
+								<span class="leading-5.5 text-base font-medium tracking-[5px]">View projects</span>
+								<img
+									src={IconRightArrow}
+									alt="Right arrow"
+								/>
+							</div>
+						</div>
+					</a>
+				))
+			}
+		</section>
+	</main>
+
 	<footer></footer>
 </Layout>
