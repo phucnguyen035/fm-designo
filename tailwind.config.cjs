@@ -17,10 +17,13 @@ module.exports = {
 				sans: ['Jost', ...defaultTheme.fontFamily.sans],
 			},
 			fontSize: {
-				base: ['1rem', { fontWeight: 400, lineHeight: '1.625rem' }],
+				base: ['15px', { fontWeight: 400, lineHeight: '25px' }],
 				h1: ['3rem', { fontWeight: 500, lineHeight: '3rem' }],
 				h2: ['2.5rem', { fontWeight: 500, lineHeight: '3rem', letterSpacing: '2px' }],
 				h3: ['1.25rem', { fontWeight: 500, lineHeight: '1.625rem', letterSpacing: '5px' }],
+			},
+			lineHeight: {
+				5.5: '1.375rem',
 			},
 		},
 	},
