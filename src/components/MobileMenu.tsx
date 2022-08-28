@@ -19,11 +19,15 @@ export default function MobileMenu() {
 					<img
 						src={IconClose}
 						alt="Close menu"
+						width={20}
+						height={20}
 					/>
 				) : (
 					<img
 						src={IconHamburger}
 						alt="Open menu"
+						width={24}
+						height={20}
 					/>
 				)}
 			</button>
