@@ -1,6 +1,7 @@
 ---
+import { Image, Picture } from '@astrojs/image/components'
 import BgHeroPattern from '../assets/images/bg-pattern-hero.svg'
-import ImageHeroPhone from '../assets/images/bg-phone-hero.svg'
+import ImageHeroPhone from '../assets/images/bg-phone-hero.png'
 import Button from './Button.astro'
 ---
 
@@ -24,11 +25,11 @@ import Button from './Button.astro'
 		<Button variant="outline">Learn more</Button>
 	</div>
 
-	<img
+	<Picture
 		src={ImageHeroPhone}
-		class="mx-auto"
+		class="flex justify-center"
 		alt="Phone"
-		width="284"
-		height="371"
+		sizes=""
+		widths={[568]}
 	/>
 </section>
